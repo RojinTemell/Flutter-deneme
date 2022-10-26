@@ -19,7 +19,6 @@ void main() {
 
   // ornek 2
   int newCustomerMoney = 10;
-  const int bankingCost = 5;
   const int bankingCostGeneral = 20;
   if (newCustomerMoney > 5) {
     print('hoşgeldiniz');
