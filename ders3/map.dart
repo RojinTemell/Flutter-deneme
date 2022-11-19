@@ -1,5 +1,9 @@
 void main() {
-  Map<String, int> users = {'ahmet': 20, 'mehmet': 34, 'ali': 47};
+  Map<String, int> users = {
+    'ahmet': 20,
+    'mehmet': 34,
+    'ali': 47
+  }; // basit bir key value listesidir
   print('alinin parası${users['ali']}');
 
   for (var item in users.keys) {
@@ -7,7 +11,10 @@ void main() {
   }
 
   for (int i = 0; i < users.length; i++) {
-    print('${users.keys.elementAt(i)}-${users.values.elementAt(i)}');
+    print(
+        '${users.keys.elementAt(i)}-${users.values.elementAt(i)}'); // index i döndürür
+    //final numbers = <int>[1, 2, 3, 5, 6, 7];
+    //final elementAt = numbers.elementAt(4); // 6
   }
 
   Map<String, List<int>> vbBank = {

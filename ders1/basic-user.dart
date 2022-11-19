@@ -1,6 +1,6 @@
 //musteriinin adını tut
 //musterinin parasını ogren
-//merhaba iyip parasını göster
+//merhaba diyip parasını göster
 //parasına  5 tl ekle
 void main() {
   int userMoney = 25;

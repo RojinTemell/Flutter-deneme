@@ -29,7 +29,7 @@ void main() {
     1,
     'rojin',
     true
-  ]; //dynamic demek lidtenin çindekine göre tip almasıdır ve hiç önerilmez tüm tipleri kullanmamız
+  ]; //dynamic demek listenin içindekine göre tip almasıdır ve hiç önerilmez tüm tipleri kullanmamız
 
   for (var item in users) {
     // for in çok kullanışlıdır

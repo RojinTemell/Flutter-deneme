@@ -13,6 +13,8 @@ void main() {
   print(user3);
 }
 
+
+
 /*int? controlMoney(int? money) {
   if (money != null && money > 0) {
     return null;
@@ -22,19 +24,4 @@ void main() {
   }
 }*/
 
-class User2 {
-  String name;
-  // get-set
-  int _money;
-  int get money => money;
-  set money(int? money) {
-    // işlem
-    _money = money == null ? 0 : money;
-    //_money = money;
-  }
 
-  int? age;
-  String? city;
-
-  User2(this.name, this._money, {this.age, this.city}) {}
-}
