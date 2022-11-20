@@ -30,7 +30,17 @@ class User2 {
   late final String userCode;
 
   User2(this.name, this.money, {required String id, this.city, this.age}) {
-    _id = id;
+    _id = id + "tem";
     userCode = (city ?? 'ist') + name;
+  }
+
+  String writeId(String id) {
+    return _id;
+  }
+}
+
+extension User2ControlExtenxion on User2 {
+  void controlName() {
+    print(name);
   }
 }

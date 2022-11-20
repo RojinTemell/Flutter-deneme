@@ -1,4 +1,5 @@
-import 'model.dart'; // bu modelle ekleyip import ettikten sonra id ye ulaşamayız
+import 'model/model.dart'; // bu modelle ekleyip import ettikten sonra id ye ulaşamayız
+import 'model/model2.dart';
 
 void main() {
   //List<int?> customers = [100, null, 0];
@@ -11,6 +12,10 @@ void main() {
   User user2 = User('er', 5, id: '143', age: 32, city: 'erwaf');
   print(user2);
   print(user3);
+
+  User2 user_1 = User2('name', 123,
+      id: '34'); // burayı sor neden yukarıdakini almadı aşağıda
+  print(user_1.writeId('19').toString());
 }
 
 
