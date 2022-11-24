@@ -1,7 +1,6 @@
-void main(List<String> args) {
-  final car = CarModel(
-      category: CarModels.bmw, name: 'name', money: 35.4, isSecondHand: false);
+import '../ders4/classExtends.dart';
 
+void main(List<String> args) {
   final carItems = [
     CarModel(
         category: CarModels.bmw,
@@ -39,25 +38,77 @@ void main(List<String> args) {
   } else {
     print("yok");
   }
+
+  final resultBMWmore20 = carItems.where((element) {
+    return element.category == CarModels.bmw && element.money > 20;
+  }).join();
+
+  print(resultBMWmore20);
+
+  final carNames = carItems.map((e) => e.name).join(',');
+  print(carNames);
+
+  try {
+    final mercedesCar = carItems
+        .singleWhere((element) => element.category == CarModels.mercedes);
+    print(mercedesCar);
+  } catch (e) {
+    print('araba yok');
+  } finally {
+    print('hep çaılıcak bu satır');
+  }
+
+  final index = carItems.indexOf(newCar);
+  print(index);
+
+  carItems.add(CarModel(
+      category: CarModels.bmw, name: 'name', money: 35.4, isSecondHand: false));
+  carItems.sort((first, second) => first.money.compareTo(second.money));
+  print(carItems);
+
+  final users = carItems.expand((element) => element.users).toList();
+  print(users);
+
+  carItems.remove(newCar);
+  carItems.removeWhere(
+      (element) => element.category == CarModels.bmw || element.money < 300);
+
+  print(carItems);
+
+  void calculateToUser(List<CarModel> items) {
+    final newItems = items.map((CarModel e) {
+      if (e.category == CarModels.bmw) {
+        e.category = CarModels.polo;
+      }
+      if (e.isSecondHand) {
+        e.isSecondHand = false;
+      }
+      return e;
+    });
+    print(newItems);
+  }
+
+  calculateToUser(carItems);
 }
 
 class CarModel {
-  final CarModels category;
+  CarModels category;
   final String name;
   final double money;
+  List<User> users;
   String? city;
   bool isSecondHand;
 
-  CarModel({
-    required this.category,
-    required this.name,
-    required this.money,
-    this.city,
-    this.isSecondHand = true,
-  });
+  CarModel(
+      {required this.category,
+      required this.name,
+      required this.money,
+      this.city,
+      this.isSecondHand = true,
+      this.users = const []});
 }
 
-/*@override
+/*@override sor burayı
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
 

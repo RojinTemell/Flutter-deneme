@@ -10,6 +10,9 @@ void main(List<String> args) {
   final user1 = User('name', 'product');
   final new_Product = Product(user1.product);
   final newProduct2 = Product.fromUser(user1);
+  print(new_Product);
+  print(newProduct2);
+  print(newProduct);
 
   //api key neydi
   ProductConfig.instance.apiKey;
